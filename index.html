@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LEFT BEHIND — $LEFTBEHIND</title>
+<meta name="description" content="He picked the other dog. $LEFTBEHIND is the coin for the shelter dog still waiting in Kennel 14.">
+<meta property="og:title" content="LEFT BEHIND — $LEFTBEHIND">
+<meta property="og:description" content="He picked the other dog. This one is still in Kennel 14.">
+<meta property="og:image" content="/pfp.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/pfp.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600&family=Permanent+Marker&display=swap">
+<style>
+/* Layout: a shelter kennel — concrete floor, chain-link, one taped-up intake card. Single column, mobile first. */
+:root{
+  --bg:#2b2d2f;          /* wet concrete */
+  --bg2:#1f2122;
+  --fg:#f1efe8;
+  --muted:#a8a69f;
+  --card:#f6e9a7;        /* kennel intake card */
+  --card-ink:#1c1b17;
+  --accent:#ff6a1a;      /* safety-orange collar */
+  --green:#6fd37a;
+  --red:#ff5a5a;
+  --line:rgba(255,255,255,.12);
+  --display:"Archivo Black",Impact,"Arial Black",sans-serif;
+  --body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --hand:"Permanent Marker","Comic Sans MS",cursive;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.5;
+  background-image:
+    repeating-linear-gradient(45deg,transparent 0 22px,var(--line) 22px 23px),
+    repeating-linear-gradient(-45deg,transparent 0 22px,var(--line) 22px 23px);}
+.wrap{max-width:720px;margin:0 auto;padding:16px 16px 64px}
+header{display:flex;justify-content:space-between;align-items:center;padding-block:8px}
+.logo{font-family:var(--display);letter-spacing:.04em;font-size:1.05rem}
+.logo span{color:var(--accent)}
+.tick{font-family:var(--hand);color:var(--card);font-size:1.1rem}
+h1,h2{font-family:var(--display);line-height:1;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.6rem,11vw,5rem);text-transform:uppercase}
+h1 em{font-style:normal;color:var(--accent)}
+h2{font-size:1.4rem;text-transform:uppercase;letter-spacing:.02em;margin-bottom:12px}
+.hero{display:grid;gap:20px;padding-block:24px}
+.hero p{color:var(--muted);max-width:34ch;margin:0;font-size:1.05rem}
+.kennel{position:relative;background:var(--bg2);border:2px solid #0d0e0f;border-radius:6px;overflow:hidden;max-width:100%}
+.kennel svg{display:block;width:100%;height:auto}
+.days{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.days b{font-family:var(--display);font-size:clamp(3rem,16vw,6rem);line-height:.9;color:var(--card);font-variant-numeric:tabular-nums}
+.days span{color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-size:.8rem}
+.card{background:var(--card);color:var(--card-ink);padding:22px 20px 20px;border-radius:3px;position:relative;
+  transform:rotate(-1.2deg);box-shadow:0 12px 30px rgba(0,0,0,.45);font-family:var(--hand);font-size:1.15rem;line-height:1.45;margin-block:28px 36px}
+.card::before{content:"";position:absolute;top:-12px;left:50%;width:110px;height:26px;margin-left:-55px;background:rgba(255,255,255,.45);transform:rotate(1.5deg)}
+.card .hd{font-family:var(--body);font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;border-bottom:2px solid var(--card-ink);padding-bottom:6px;margin-bottom:12px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin:0}
+.card dt{font-family:var(--body);font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;align-self:baseline}
+.card dd{margin:0}
+.stamp{position:absolute;right:14px;bottom:12px;border:3px solid var(--red);color:var(--red);font-family:var(--body);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.75rem;padding:4px 8px;transform:rotate(8deg);opacity:.85}
+section{padding-block:28px;border-top:1px solid var(--line)}
+.lead{font-size:1.15rem;max-width:60ch;margin:0 0 8px}
+p{max-width:65ch}
+.log{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.log li{display:grid;grid-template-columns:62px 1fr;gap:12px;align-items:baseline;min-width:0}
+.log b{font-family:var(--hand);color:var(--card);font-size:1.1rem}
+.log span{color:var(--fg)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.tile{border:1px solid var(--line);padding:14px;border-radius:4px}
+.tile b{display:block;font-family:var(--display);font-size:1.4rem;color:var(--accent);margin-bottom:4px;font-variant-numeric:tabular-nums}
+.tile span{color:var(--muted);font-size:.85rem;text-transform:uppercase;letter-spacing:.1em}
+.ca{display:flex;gap:8px;align-items:stretch;flex-wrap:wrap}
+.ca code{flex:1 1 220px;min-width:0;background:var(--bg2);border:1px dashed var(--line);padding:12px;border-radius:4px;font-size:.85rem;word-break:break-all;color:var(--muted)}
+button,.btn{font:inherit;font-weight:600;background:var(--accent);color:#1a0d05;border:0;padding:12px 18px;border-radius:4px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+button:focus-visible,.btn:focus-visible,a:focus-visible{outline:3px solid var(--card);outline-offset:2px}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.ghost{background:transparent;color:var(--fg);border:1px solid var(--fg)}
+.es{color:var(--muted);font-style:italic}
+footer{color:var(--muted);font-size:.8rem;padding-top:24px;border-top:1px solid var(--line)}
+.ear{transform-origin:170px 118px;animation:flick 6s infinite}
+@keyframes flick{0%,92%,100%{transform:rotate(0)}94%{transform:rotate(-12deg)}97%{transform:rotate(4deg)}}
+@media (prefers-reduced-motion:reduce){.ear{animation:none}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <div class="logo">LEFT<span>BEHIND</span></div>
+  <div class="tick">$LEFTBEHIND</div>
+</header>
+
+<div class="hero">
+  <h1>He picked <em>the other</em> dog.</h1>
+  <p>A billionaire walked into the shelter, adopted one dog, and walked right past this one. He's still in Kennel 14. Waiting.</p>
+
+  <div class="kennel" aria-label="A scruffy mutt sitting behind kennel bars">
+    <svg viewBox="0 0 400 300" role="img" aria-hidden="true">
+      <defs>
+        <pattern id="fence" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <rect width="28" height="28" fill="none"/>
+          <path d="M0 0H28M0 0V28" stroke="#9aa0a6" stroke-width="2.2" fill="none"/>
+        </pattern>
+      </defs>
+      <!-- back wall + floor -->
+      <rect width="400" height="300" fill="#3a3d40"/>
+      <rect y="210" width="400" height="90" fill="#2a2c2e"/>
+      <path d="M0 210H400" stroke="#1a1b1c" stroke-width="3"/>
+      <rect x="20" y="40" width="360" height="150" fill="#44484c" stroke="#2b2e31" stroke-width="2"/>
+      <!-- bowl -->
+      <ellipse cx="330" cy="236" rx="34" ry="12" fill="#c7c9cc"/>
+      <ellipse cx="330" cy="233" rx="26" ry="8" fill="#8f9398"/>
+      <!-- dog body -->
+      <ellipse cx="190" cy="222" rx="78" ry="38" fill="#b48152"/>
+      <ellipse cx="190" cy="222" rx="60" ry="26" fill="#d4a373"/>
+      <!-- tail, tucked -->
+      <path d="M262 226c22-6 30 10 26 24" stroke="#b48152" stroke-width="12" stroke-linecap="round" fill="none"/>
+      <!-- legs -->
+      <rect x="140" y="236" width="20" height="36" rx="9" fill="#b48152"/>
+      <rect x="208" y="236" width="20" height="36" rx="9" fill="#b48152"/>
+      <!-- head -->
+      <circle cx="170" cy="150" r="58" fill="#c89262"/>
+      <ellipse cx="170" cy="172" rx="34" ry="24" fill="#e9c9a0"/>
+      <!-- ears -->
+      <path d="M118 128c-16-28 2-58 20-62 6 14 10 34 8 52z" fill="#8c5a33"/>
+      <path class="ear" d="M212 110c20-22 48-14 54 2-12 12-28 22-44 26z" fill="#8c5a33"/>
+      <!-- scruffy fur tufts -->
+      <path d="M150 96l8-18 6 16 8-14 4 16" stroke="#c89262" stroke-width="6" stroke-linecap="round" fill="none"/>
+      <!-- eyes, big and sad -->
+      <circle cx="150" cy="146" r="12" fill="#fff"/><circle cx="192" cy="146" r="12" fill="#fff"/>
+      <circle cx="151" cy="149" r="7" fill="#1c1b17"/><circle cx="193" cy="149" r="7" fill="#1c1b17"/>
+      <circle cx="154" cy="146" r="2.5" fill="#fff"/><circle cx="196" cy="146" r="2.5" fill="#fff"/>
+      <path d="M136 132q14-8 28-2M178 130q14-6 28 2" stroke="#6b4323" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <!-- nose + mouth -->
+      <ellipse cx="170" cy="168" rx="10" ry="7" fill="#2a1d14"/>
+      <path d="M170 175v8M160 186q10 6 20 0" stroke="#2a1d14" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <!-- collar -->
+      <path d="M118 196q52 22 104 0" stroke="#ff6a1a" stroke-width="10" fill="none"/>
+      <circle cx="170" cy="206" r="9" fill="#f6e9a7"/>
+      <!-- chain-link -->
+      <rect width="400" height="300" fill="url(#fence)" opacity=".85"/>
+      <rect x="6" y="6" width="388" height="288" fill="none" stroke="#babfc4" stroke-width="8"/>
+      <!-- kennel number -->
+      <rect x="300" y="18" width="78" height="40" fill="#f6e9a7" transform="rotate(-3 339 38)"/>
+      <text x="339" y="46" text-anchor="middle" font-family="Permanent Marker,cursive" font-size="22" fill="#1c1b17" transform="rotate(-3 339 38)">#14</text>
+    </svg>
+  </div>
+
+  <div class="days">
+    <b id="days">1</b>
+    <span>day<span id="plural"></span> still in the kennel</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="hd"><span>Travis County Animal Services · Intake Card</span><span>Kennel 14</span></div>
+  <dl>
+    <dt>Name</dt><dd>None. They just say "the other one."</dd>
+    <dt>Breed</dt><dd>Mutt. Mostly hope.</dd>
+    <dt>Came in as</dt><dd>Stray. Same week as the famous one.</dd>
+    <dt>Condition</dt><dd>Both legs work fine. Apparently that's not what sells.</dd>
+    <dt>Temperament</dt><dd>Sat perfectly still when the billionaire walked by. Still got passed over.</dd>
+    <dt>Status</dt><dd>Available. Very available.</dd>
+  </dl>
+  <div class="stamp">Not Adopted</div>
+</div>
+
+<section>
+  <h2>The story</h2>
+  <p class="lead">October 2026. The richest man on earth adopts a shelter dog in Austin. The internet loses its mind. Ten tokens launch with the dog's name in an hour.</p>
+  <p>Nobody launched one for the dog in the next kennel. The one that watched the whole thing happen through a chain-link fence. The one that's still there.</p>
+  <p>This is his coin. Every day he's still in Kennel 14, the story keeps going.</p>
+  <p class="es">Él eligió al otro perro. Este sigue esperando.</p>
+</section>
+
+<section>
+  <h2>Kennel log</h2>
+  <ul class="log">
+    <li><b>Day 1</b><span>Billionaire came through. Made eye contact. He kept walking.</span></li>
+    <li><b>Day 2</b><span>The other dog has ten tokens and a Grok fact-check. I have a water bowl.</span></li>
+    <li><b>Day 3</b><span>Volunteer said "someone will come for you." She did not sound sure.</span></li>
+    <li><b>Day 4</b><span>Practiced sitting. Practiced not barking. Practiced being picked.</span></li>
+    <li><b>Day ?</b><span>Still here. Still available. Still the other one.</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2>The coin</h2>
+  <div class="grid">
+    <div class="tile"><b>1B</b><span>Supply</span></div>
+    <div class="tile"><b>0%</b><span>Tax</span></div>
+    <div class="tile"><b>Burned</b><span>LP</span></div>
+    <div class="tile"><b>Fair</b><span>Launch</span></div>
+  </div>
+  <p style="margin-top:16px;color:var(--muted)">When he finally gets adopted, the coin doesn't end. It graduates. Until then, every holder is someone who didn't walk past.</p>
+</section>
+
+<section>
+  <h2>Contract</h2>
+  <div class="ca">
+    <code id="ca">CA drops at launch. Don't buy anything claiming to be it before then.</code>
+    <button id="copy" type="button">Copy</button>
+  </div>
+  <div class="btns">
+    <a class="btn" href="#" aria-disabled="true">Buy on pump.fun</a>
+    <a class="btn ghost" href="#" aria-disabled="true">X</a>
+    <a class="btn ghost" href="#" aria-disabled="true">Telegram</a>
+  </div>
+</section>
+
+<footer>
+  $LEFTBEHIND is a meme coin with no intrinsic value and no promise of financial return. Not affiliated with any shelter, any dog, or any billionaire. Adopt. Don't shop.
+</footer>
+</div>
+
+<script>
+(function(){
+  var start=new Date(2026,9,7); // Oct 7, 2026: the day he got passed over
+  var now=new Date();
+  var d=Math.max(1,Math.floor((now-start)/86400000)+1);
+  document.getElementById('days').textContent=d;
+  document.getElementById('plural').textContent=d===1?'':'s';
+  var btn=document.getElementById('copy');
+  btn.addEventListener('click',function(){
+    var t=document.getElementById('ca').textContent;
+    var done=function(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy'},1500)};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){sel()})}else{sel()}
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('ca'));var s=getSelection();s.removeAllRanges();s.addRange(r)}
+  });
+})();
+</script>
+
+</body>
+</html>
